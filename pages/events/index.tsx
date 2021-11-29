@@ -1,14 +1,13 @@
 import React from 'react'
 import {EventList} from '../../components'
-import { getFeaturedEvents } from '../../data';
+import { getAllEvents } from '../../data';
 
-const Index: React.FC = ({}) => {
-   const items =  getFeaturedEvents()
+const AllEvents: React.FC = ({}) => {
+   const events = getAllEvents();
         return (
             <div>
-                <h1>Events</h1>
-                <EventList  events={items}/>
+                <EventList  events={events}/>
             </div>
         );
 }
-export default Index;
+export default AllEvents;
