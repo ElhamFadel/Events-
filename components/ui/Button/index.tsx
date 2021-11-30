@@ -1,10 +1,10 @@
 import React from 'react'
 import Link from  'next/link'
-import classes from './button.module.scss'
+import classes from './button.module.css'
 interface buttonProps {
-    children: any,
-    link:string,
-    onClick:React.MouseEventHandler<HTMLButtonElement> | undefined,
+    children?: any,
+    link?:string,
+    onClick?:React.MouseEventHandler<HTMLButtonElement> | undefined,
 }
 
 const Button: React.FC<buttonProps> = ({link,children,onClick}) => {
@@ -15,5 +15,6 @@ const Button: React.FC<buttonProps> = ({link,children,onClick}) => {
             </Link>
         ) : (
             <button className={classes.btn} onClick={onClick}>{children}</button>
+        )
 }
 export default Button;

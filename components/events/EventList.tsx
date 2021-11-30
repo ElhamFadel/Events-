@@ -12,7 +12,7 @@ interface EventListProps {
     events: Event[]
 }
 const EventList: React.FC<EventListProps> = ({events}) => {
-       
+       console.log(events)
         return (
             <div className={classes.list}>
                 {
