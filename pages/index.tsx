@@ -6,7 +6,6 @@ import {getFeaturedEvents} from "../data"
 import { EventList } from '../components'
 const Home: NextPage = () => {
   const featuredEvents = getFeaturedEvents()
-  console.log(featuredEvents,"Hello with home")
   return (
     <div className={styles.container}>
         <EventList events={featuredEvents} />
