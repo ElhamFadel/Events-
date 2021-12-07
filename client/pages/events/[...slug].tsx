@@ -3,10 +3,8 @@ import {useRouter} from "next/router"
 import { getFilteredEvents } from '../../data';
 import { EventList } from '../../components';
 import { Button } from '../../components/ui';
-interface Props {
 
-}
- const FilterEventPage: React.FC<Props> = ({}) => {
+ const FilterEventPage: React.FC = ({}) => {
     const router = useRouter()
     const {slug} = router.query;
     if(!slug) return <h1>Loading ...</h1>
@@ -21,15 +19,18 @@ interface Props {
            </>
         )
    }
-       console.log(year,month)
       const eventsItem = getFilteredEvents({year,month})
              return (
            <Fragment>
+                <div className="center">
+                <Button link={'/events'}>Back to events</Button>
+                <h1>Events in {year}/{month}</h1>
                 {
                      eventsItem.length?<EventList  events={eventsItem} />
                      :
                      <p>No events found</p>
                 }
+                </div>
               </Fragment>
                
         )
