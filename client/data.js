@@ -32,7 +32,6 @@ const DUMMY_EVENTS = [
 ];
 
 export function getFeaturedEvents() {
-  console.log("Helll")
   return DUMMY_EVENTS.filter((event) => event.isFeatured);
 }
 
